@@ -13,10 +13,10 @@ const routes = [
   {
     path: "/",
     component: DashboardLayout,
-    redirect: "/dashboard",
+    redirect: "/monitoramento",
     children: [
       {
-        path: "dashboard",
+        path: "monitoramento",
         name: "Monitoramento",
         component: Dashboard
       },
@@ -31,8 +31,8 @@ const routes = [
         component: TableList
       },
       {
-        path: "typography",
-        name: "Typography",
+        path: "Filas",
+        name: "Filas",
         component: Typography
       },
       {

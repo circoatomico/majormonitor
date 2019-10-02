@@ -4,30 +4,23 @@
       <nav>
         <ul>
           <li>
-            <a href="https://www.creative-tim.com">Creative Tim</a>
+            <a href="https://voipeasy.com.br/" target="_blank">Voip Easy</a>
           </li>
           <li>
-            <a href="https://creative-tim.com/presentation">
-              About Us
+            <a href="#">
+              Suporte
             </a>
           </li>
           <li>
-            <a href="http://blog.creative-tim.com">
-              Blog
-            </a>
-          </li>
-          <li>
-            <a href="https://www.creative-tim.com/license">
-              Licenses
+            <a href="#">
+              Licença
             </a>
           </li>
         </ul>
       </nav>
       <div class="copyright text-center">
         &copy; {{ new Date().getFullYear() }}
-        <a href="https://www.creative-tim.com/?ref=mdf-vuejs" target="_blank"
-          >Creative Tim</a
-        >, made with <i class="fa fa-heart heart"></i> for a better web
+        <a href="https://voipeasy.com.br/" target="_blank">Voip Easy</a>, Feito com <i class="fa fa-heart heart"></i> para soluções melhores
       </div>
     </div>
   </footer>

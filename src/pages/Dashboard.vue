@@ -1,339 +1,130 @@
 <template>
+<div>
   <div class="content">
     <div class="md-layout">
-      <!-- <div
-        class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-33"
-      > -->
-        <!-- <chart-card
-          :chart-data="dailySalesChart.data"
-          :chart-options="dailySalesChart.options"
-          :chart-type="'Line'"
-          data-background-color="blue"
-        >
-          <template slot="content">
-            <h4 class="title">Monitoramento Diário</h4>
-            <p class="category">
-              <span class="text-success"
-                ><i class="fas fa-long-arrow-alt-up"></i> 55%
-              </span>
-              mais ligações.
-            </p>
-          </template>
-
-          <template slot="footer">
-            <div class="stats">
-              <md-icon>access_time</md-icon>
-              updated 4 minutes ago
-            </div>
-          </template>
-        </chart-card>
-      </div>
-      <div
-        class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-33"
-      >
-        <chart-card
-          :chart-data="emailsSubscriptionChart.data"
-          :chart-options="emailsSubscriptionChart.options"
-          :chart-responsive-options="emailsSubscriptionChart.responsiveOptions"
-          :chart-type="'Bar'"
-          data-background-color="red"
-        >
-          <template slot="content">
-            <h4 class="title">Email Subscription</h4>
-            <p class="category">
-              Last Campaign Performance
-            </p>
-          </template>
-
-          <template slot="footer">
-            <div class="stats">
-              <md-icon>access_time</md-icon>
-              updated 10 days ago
-            </div>
-          </template>
-        </chart-card>
-      </div>
-      <div
-        class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-33"
-      >
-        <chart-card
-          :chart-data="dataCompletedTasksChart.data"
-          :chart-options="dataCompletedTasksChart.options"
-          :chart-type="'Line'"
-          data-background-color="green"
-        >
-          <template slot="content">
-            <h4 class="title">Completed Tasks</h4>
-            <p class="category">
-              Last Campaign Performance
-            </p>
-          </template>
-
-          <template slot="footer">
-            <div class="stats">
-              <md-icon>access_time</md-icon>
-              campaign sent 26 minutes ago
-            </div>
-          </template>
-        </chart-card> -->
-      <!-- </div> -->
-      <div
-        class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-25"
-      >
-        <stats-card data-background-color="green">
+       
+      <div class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-25">
+        <stats-card data-background-color="blue">
           <template slot="header">
-            <md-icon>phone</md-icon>
-               <span class="h3" style="vertical-align:middle;">7036</span><br>
-               <span class="h3" style="vertical-align:middle;">José Carlos</span>
+            <md-icon>phone</md-icon> 
           </template>
 
           <template slot="content">
             <p class="category">Ativo</p>
-            <h3 class="title">00:26</h3>
-          </template>
+            <h4 class="title">Aguardando</h4>
+          </template> 
 
-          <template slot="footer">
-            <div class="stats">
-              Em Atendimento com 9999-8745
-            </div>
-          </template>
+            <template slot="footer">
+                <div class="stats flow-text" >
+                    <center >
+                        <span style="text-align: center !important;" class="h4 center-align span-dark-text" >7036 - José Carlos</span> <br>
+                    </center>
+                    <span class="valign-wrapper">
+                        Aguardando
+                    </span>
+                </div> 
+            </template> 
+
         </stats-card>
       </div>
 
-       <div
-        class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-25"
-      >
+      <div class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-25">
         <stats-card data-background-color="green">
           <template slot="header">
-            <md-icon>phone</md-icon>
-               <span class="h3" style="vertical-align:middle;">7058</span>
-               <br>
-               <span class="h3" style="vertical-align:middle;">Ana Luiza</span>
+            <md-icon>phone_callback</md-icon> 
           </template>
 
           <template slot="content">
             <p class="category">Ativo</p>
-            <h3 class="title">15:14</h3>
-          </template>
+            <h4 class="title">00:26</h4>
+          </template> 
 
-          <template slot="footer">
-            <div class="stats">
-              Em Atendimento com 9999-9845
-            </div>
-          </template>
+            <template slot="footer">
+                <div class="stats flow-text" >
+                    <center >
+                        <span style="text-align: center !important;" class="h4 center-align span-dark-text" >7068 - Janduy Euclides</span> <br>
+                    </center>
+                    <span class="  valign-wrapper">
+                        Recebido de 9999-8745
+                    </span>
+                </div> 
+            </template> 
+
         </stats-card>
       </div>
 
-       <div
-        class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-25"
-      >
+      <div class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-25">
         <stats-card data-background-color="green">
           <template slot="header">
-            <md-icon>phone</md-icon>
-               <span class="h3" style="vertical-align:middle;">7059</span>
-               <br>
-               <span class="h3" style="vertical-align:middle;">Beatriz</span>
+            <i class="material-icons">
+            phone_forwarded
+            </i>
           </template>
 
           <template slot="content">
             <p class="category">Ativo</p>
-            <h3 class="title">09:06</h3>
-          </template>
+            <h4 class="title">01:56</h4>
+          </template> 
 
-          <template slot="footer">
-            <div class="stats">
-              Em Atendimento com 9999-6547
-            </div>
-          </template>
+            <template slot="footer">
+                <div class="stats flow-text" >
+                    <center >
+                        <span style="text-align: center !important;" class="h4 center-align span-dark-text" >7080 - Luciano</span> <br>
+                    </center>
+                    <span class="  valign-wrapper">
+                        Atendido por 9999-8745
+                    </span>
+                </div> 
+            </template> 
+
         </stats-card>
       </div>
 
-       <div
-        class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-25"
-      >
-        <stats-card data-background-color="green">
+       <div class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-25">
+        <stats-card data-background-color="gray">
           <template slot="header">
-            <md-icon>phone</md-icon>
-               <span class="h3" style="vertical-align:middle;">7088</span>
-               <br>
-               <span class="h3" style="vertical-align:middle;">Filipe</span>
+            <md-icon>phone</md-icon> 
           </template>
 
           <template slot="content">
-            <p class="category">Ativo</p>
-            <h3 class="title">00:20</h3>
-          </template>
+            <p class="category">Inativo</p>
+            <h4 class="title">Inativo a 4h</h4>
+          </template> 
 
-          <template slot="footer">
-            <div class="stats">
-              Em Atendimento com 9875-9878
-            </div>
-          </template>
+            <template slot="footer">
+                <div class="stats flow-text" >
+                    <center >
+                        <span style="text-align: center !important;" class="h4 center-align span-dark-text" >7077 - Luiz Gomes</span> <br>
+                    </center>
+                    <span class="valign-wrapper">
+                        Ramal Inativo
+                    </span>
+                </div> 
+            </template> 
+
         </stats-card>
       </div>
  
-      <div
-        class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-25"
-      >
-        <stats-card data-background-color="orange">
-          <template slot="header">
-            <md-icon>phone</md-icon>
-            <span class="h3" style="vertical-align:middle;">8098</span>
-            <br>
-               <span class="h3" style="vertical-align:middle;">Antônio</span>
-          </template>
-
-          <template slot="content">
-            <p class="category">Ativo</p>
-            <h3 class="title">
-              Discando...
-            </h3>
-          </template>
-
-          <template slot="footer">
-             <div class="stats"> 
-              Discando para 930157808
-            </div>
-          </template>
-        </stats-card>
-      </div>
-
-       <div
-        class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-25"
-      >
-        <stats-card data-background-color="orange">
-          <template slot="header">
-            <md-icon>phone</md-icon>
-               <span class="h3" style="vertical-align:middle;">8636</span>
-               <br>
-               <span class="h3" style="vertical-align:middle;">Roberto</span>
-          </template>
-
-          <template slot="content">
-            <p class="category">Ativo</p>
-            <h3 class="title">
-              Discando...
-            </h3>
-          </template>
-
-          <template slot="footer">
-             <div class="stats"> 
-              Discando para 930157808
-            </div>
-          </template>
-        </stats-card>
-      </div>
-
-       <div
-        class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-25"
-      >
-        <stats-card data-background-color="red">
-          <template slot="header">
-            <md-icon>phone</md-icon>
-               <span class="h3" style="vertical-align:middle;">8069</span> 
-               <br>
-               <span class="h3" style="vertical-align:middle;">Janduy</span>
-          </template>
-
-          <template slot="content">
-            <p class="category">Ativo</p>
-            <h3 class="title">
-              Ocupado
-            </h3>
-          </template>
-
-          <template slot="footer">
-             <div class="stats"> 
-              Discando para 930157808
-            </div>
-          </template>
-        </stats-card>
-      </div>
-      <div
-        class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-25"
-      >
-        <stats-card data-background-color="red">
-          <template slot="header">
-            <md-icon>phone</md-icon>
-               <span class="h3" style="vertical-align:middle;">8040</span>
-               <br>
-               <span class="h3" style="vertical-align:middle;">Euclides</span>
-
-          </template>
-
-          <template slot="content">
-            <p class="category">Ativo</p>
-            <h3 class="title">Finalizado</h3>
-          </template>
-
-          <template slot="footer">
-            <div class="stats"> 
-              Chamada
-            </div>
-          </template>
-        </stats-card>
-      </div>
-      <div
-        class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-25"
-      >
-        <stats-card data-background-color="gray">
-          <template slot="header">
-            <md-icon>phone</md-icon>
-            <span class="h3" style="vertical-align:middle;">8025</span>
-            <br>
-               <span class="h3" style="vertical-align:middle;">Luiz</span>
-          </template>
-
-          <template slot="content">
-            <p class="category">  Inativo</p>
-            <h3 class="title">Inativo a 6h</h3>
-          </template>
-
-          <template slot="footer">
-            <div class="stats"> 
-              Inativo
-            </div>
-          </template>
-        </stats-card>
-      </div>
-      <br>
-      <!-- <div
-        class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50"
-      >
-        <md-card>
-          <md-card-header data-background-color="orange">
-            <h4 class="title">Últimas Ligações</h4>
-            <p class="category">54 novas ligações na última hora</p>
-          </md-card-header>
-          <md-card-content>
-            <ordered-table table-header-color="orange"></ordered-table>
-          </md-card-content>
-        </md-card>
-      </div> -->
-      <div
-        class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50"
-      >
-        <!-- <nav-tabs-card>
-          <template slot="content">
-            <span class="md-nav-tabs-title">To do:</span>
-            <md-tabs class="md-success" md-alignment="left">
-              <md-tab id="tab-home" md-label="Bugs" md-icon="bug_report">
-                <nav-tabs-table></nav-tabs-table>
-              </md-tab>
-
-              <md-tab id="tab-pages" md-label="Website" md-icon="code">
-                <nav-tabs-table></nav-tabs-table>
-              </md-tab>
-
-              <md-tab id="tab-posts" md-label="server" md-icon="cloud">
-                <nav-tabs-table></nav-tabs-table>
-              </md-tab>
-            </md-tabs>
-          </template>
-        </nav-tabs-card> -->
-      </div>
+      
     </div>
   </div>
+
+   <div class="row">
+        <div> 
+          <div class="md-layout-item md-medium-size-200 md-xsmall-size-100 md-size-100">
+            <md-card>
+                <md-card-header data-background-color="orange">
+                    <h4 class="title">10 Últimas Ligações</h4>
+                    <p class="category">54 novas ligações na última hora</p>
+                </md-card-header>
+              <md-card-content>
+                     <ordered-table table-header-color="orange"></ordered-table>
+              </md-card-content>
+            </md-card>
+          </div>
+        </div>
+      </div>
+    </div>
 </template>
 
 <script>
@@ -443,3 +234,11 @@ export default {
   }
 };
 </script>
+
+
+<style scoped>
+
+.span-dark-text{
+    color: black !important;
+}
+</style>

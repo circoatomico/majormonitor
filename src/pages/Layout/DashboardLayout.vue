@@ -4,11 +4,11 @@
 
     <side-bar>
       <mobile-menu slot="content"></mobile-menu>
-      <sidebar-link to="/dashboard">
+      <sidebar-link to="/monitoramento">
         <md-icon>dvr</md-icon>
         <p>Monitoramento</p>
       </sidebar-link>
-      <sidebar-link to="/typography">
+      <sidebar-link to="/filas">
         <md-icon>reorder</md-icon>
         <p>Filas</p>
       </sidebar-link>
