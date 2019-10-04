@@ -27,8 +27,33 @@
           </template>
         </chart-card>
       </div>
-    </div>
+      
+      <div
+        class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50"
+      >
+        <chart-card
+          :chart-data="dataCompletedTasksChart.data"
+          :chart-options="dataCompletedTasksChart.options"
+          :chart-type="'Line'"
+          data-background-color="green"
+        >
+          <template slot="content">
+            <h4 class="title">Monitoria de ligações</h4>
+             
+          </template>
 
+          <template slot="footer">
+            <div class="stats">
+              <md-icon>access_time</md-icon>
+              Atualizado em tempo real
+            </div>
+          </template>
+        </chart-card>
+      </div> 
+    </div>
+ 
+<modal name=" ">
+</modal>
 
      <div class="row">
         <div> 
@@ -73,18 +98,33 @@ export default {
     }
   },data(){
     return{
+        filas: [         
+            {id: 1, nome : 'Fila Desenvolvimento', estrategia: 'Atendimento Automático', agentes_online:  '<i class="material-icons">group</i> 3 ativos', agentes_offline:  '<span class="valign"><i class="material-icons">group</i> 1 deslogado(s)</span> ', status: 'Ativa', ações: '<i :click="exibeModal" class="material-icons">zoom_in</i><i class="material-icons">edit</i><i class="material-icons">delete_forever</i>' },
+            {id: 2, nome : 'Fila Comercial', estrategia: 'Atendimento Automático', agentes_online:  '<i class="material-icons">group</i> 3 ativos', agentes_offline:  '<i class="material-icons">group</i> 1 deslogado(s) ', status: 'Pausada', ações: '<i class="material-icons">zoom_in</i><i class="material-icons">edit</i><i class="material-icons">delete_forever</i>' },
+            {id: 3, nome : 'Fila Recepção', estrategia: 'Fila de Prioridade', agentes_online:  '<i class="material-icons">group</i> 3 ativos', agentes_offline:  '<i class="material-icons">group</i> 1 deslogado(s) ', status:  'Ativa', ações: '<i class="material-icons">zoom_in</i><i class="material-icons">edit</i><i class="material-icons">delete_forever</i>' },
+            {id: 4, nome : 'Fila Diretoria', estrategia: 'Atendimento Automático', agentes_online:  '<i class="material-icons">group</i> 3 ativos', agentes_offline:  '<i class="material-icons">group</i> 1 deslogado(s) ', status:  'Inativa', ações: '<i class="material-icons">zoom_in</i><i class="material-icons">edit</i><i class="material-icons">delete_forever</i>' },
+            {id: 5, nome : 'Fila Suporte', estrategia: 'Revezamento',   agentes_online:  '<i class="material-icons">group</i> 3 ativos', agentes_offline:  '<i class="material-icons">group</i> 1 deslogado(s) ', status:  'Ativa', ações: '<i class="material-icons">zoom_in</i><i class="material-icons">edit</i><i class="material-icons">delete_forever</i>' },
+        ],
+        dataCompletedTasksChart: {
+        data: {
+          labels: ["7", "8", "9", "10", "11", "12", "13", "14"],
+          series: [[5, 100, 168 ,280, 142, 6, 21 ,160]]
+        },
 
-      filas: {
-          colunas: [ 'id', 'nome','Estratégia', 'Música de espera', 'Ramais', 'Status' ],
-          dados: [
-              [1, 'Fila Desenvolvimento', 'Atendimento Automático', 'ring.wav', '8 cadastrados', 'Ativa' ],
-              [1, 'Fila Comercial', 'Atendimento Automático', 'ring.wav', '3 cadastrados', 'Pausada' ],
-              [1, 'Fila Recepção', 'Fila de Prioridade', 'Recepço_audio.wav', '2 cadastrados', 'Ativa' ],
-              [1, 'Fila Diretoria', 'Atendimento Automático', 'ring.wav', '2 cadastrados', 'Inativa' ],
-              [1, 'Fila Suporte', 'Revezamento', 'ring.wav', '3 cadastrados', 'Ativa' ],
-          ]
+        options: {
+          lineSmooth: this.$Chartist.Interpolation.cardinal({
+            tension: 0
+          }),
+          low: 0,
+          high: 300, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+          chartPadding: {
+            top: 0,
+            right: 0,
+            bottom: 0,
+            left: 0
+          }
+        }
       },
-
        emailsSubscriptionChart: {
         data: {
           labels: [
@@ -125,6 +165,25 @@ export default {
       }
     }
   }, mounted(){ 
+ 
+        this.$modal.show(true, {
+            text: 'This text is passed as a property'
+            }, {
+            draggable: true
+            })
+   
+  
+  }, methods: {
+        exibeModal(){
+            this.$modal.show('hello-world');
+        }
   }
 };
 </script>
+
+<style scoped>
+
+.valign-wrapper{
+  vertical-align: middle;
+}
+</style>

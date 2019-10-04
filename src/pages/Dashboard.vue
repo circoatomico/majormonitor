@@ -118,7 +118,7 @@
                     <p class="category">54 novas ligações na última hora</p>
                 </md-card-header>
               <md-card-content>
-                     <ordered-table table-header-color="orange"></ordered-table>
+                     <ordered-table v-bind:dados="users" table-header-color="orange"></ordered-table>
               </md-card-content>
             </md-card>
           </div>
@@ -146,6 +146,43 @@ export default {
   },
   data() {
     return {
+      users: [
+        {
+          id: 1,
+          de: "7036 - José Carlos",
+          para: "93015-7808",
+          status: "Atendido",
+          duração: "14:16"
+        },
+        {
+          id: 2,
+          de: "7080 - Luciano",
+          para: "(11) 9258-8745",
+          status: "Não Atendido",
+          duração: "00:00"
+        },
+        {
+          id: 3,
+          de: "7068 - Janduy Euclides",
+          para: "(11) 3132-7676",
+          status: "Atendido",
+          duração: "08:25"
+        },
+        {
+          id: 4,
+          de: "7087 - Filipe Diniz",
+          para: "(11) 2356-8542",
+          status: "Recusado",
+          duração: "00:00"
+        },
+        {
+          id: 5,
+          de: "(19) 6569-8745",
+          para: "7068 - Janduy Euclides",
+          status: "Não Atendido",
+          duração: "00:00"
+        }
+      ],
       dailySalesChart: {
         data: {
           labels: ["M", "T", "W", "T", "F", "S", "S"],
