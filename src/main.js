@@ -29,6 +29,7 @@ import GlobalComponents from "./globalComponents";
 import GlobalDirectives from "./globalDirectives";
 import Notifications from "./components/NotificationPlugin";
 
+
 // MaterialDashboard plugin
 import MaterialDashboard from "./material-dashboard";
 
