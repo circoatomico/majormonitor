@@ -1,18 +1,32 @@
 <template>
-<div>
-    <div class="content">
-
-        <div class="row">
+ <div class="content">
+     
+        <div class="">
             <Ramais></Ramais>
         </div>
+<!-- 
+        <div class="md-card">
+            
+        </div> -->
+        
+        <md-card>
+            <md-card-header data-background-color="orange">
+                <h4 class="title">10 Últimas Ligações</h4>
+                <p class="category">54 novas ligações na última hora</p>
+            </md-card-header>
+            <md-card-content>
 
-        <div class="row">
-            <div class="md-layout-item md-medium-size-200 md-xsmall-size-100 md-size-100">
-                <registro-ligacoes></registro-ligacoes>
-            </div>
-        </div>
+                <div class="md-layout-item md-medium-size-200 md-xsmall-size-100 md-size-100">
+                    <datatable
+                        :columns="tableColumns1"
+                        :rows="tableRows1"
+                        locale="br"
+                    ></datatable>
+                </div> 
+            </md-card-content>
+        </md-card>
+    
 
-      </div>
 </div>
 </template>
 
@@ -26,6 +40,8 @@ import {
 
 } from "@/components";
 
+import DataTable from "vue-materialize-datatable";
+
 import Ramais from "@/components/Default/Ramais.vue"
 import RegistroLigacoes from "@/components/Default/RegistroLigacoes.vue"
 
@@ -37,7 +53,9 @@ export default {
     NavTabsTable,
     OrderedTable, 
     Ramais,
-    RegistroLigacoes
+    RegistroLigacoes,
+    "datatable": DataTable 
+
   },
   data() {
     return {
@@ -161,14 +179,95 @@ export default {
             }
           ]
         ]
+      },
+      tableColumns1: [
+      {
+        label: "id",
+        field: "id",
+        numeric: false,
+        html: true
+      },
+      {
+        label: "de",
+        field: "de",
+        numeric: false,
+        html: false
+      },
+      {
+        label: "para",
+        field: "para",
+        numeric: false,
+        html: false
+      },
+      {
+        label: "status",
+        field: "status",
+        numeric: false,
+        html: false
+      },
+       {
+        label: "duração",
+        field: "duração",
+        numeric: false,
+        html: false
       }
-    };
+    ],
+    tableRows1: [
+       {
+          id: 1,
+          de: "7036 - José Carlos",
+          para: "93015-7808",
+          status: "Atendido",
+          duração: "14:16"
+        },
+        {
+          id: 2,
+          de: "7080 - Luciano",
+          para: "(11) 9258-8745",
+          status: "Não Atendido",
+          duração: "00:00"
+        },
+        {
+          id: 3,
+          de: "7068 - Janduy Euclides",
+          para: "(11) 3132-7676",
+          status: "Atendido",
+          duração: "08:25"
+      },
+      {
+        id: 4,
+        de: "7087 - Filipe Diniz",
+        para: "(11) 2356-8542",
+        status: "Recusado",
+        duração: "00:00"
+      },
+      {
+         id: 5,
+        de: "(19) 6569-8745",
+        para: "7068 - Janduy Euclides",
+        status: "Não Atendido",
+        duração: "00:00"
+      } 
+    ],
+    }
   }
 };
 </script>
 
 
-<style scoped>
+<style>
 
+table{
+    width: 100% !important;
+}
+
+.sorting{
+    text-align: left !important;
+    font-size: 1.125rem !important;
+    color: black !important;
+    font-weight: 300 !important;
+    line-height: 1.5em !important;
+    border-bottom: 1px solid black !important;
+}
 
 </style>

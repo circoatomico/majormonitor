@@ -1,10 +1,11 @@
 <template>
     <div>
 
-        <div class="content"> 
+        <div class="content margin-block"> 
             <multiple-select></multiple-select> 
         </div>
-        <div class="content">
+
+        <div class="content margin-block">
             <div id="box-ramais">
             <div class="md-layout" > 
                 <div class="md-layout-item md-medium-size-50 md-xsmall-size-100 md-size-25">
@@ -144,6 +145,10 @@ export default {
 
 .span-dark-text{
     color: black !important;
+}
+
+.margin-block{
+    margin: 0px 0px 25px 0px !important;
 }
 
 </style>

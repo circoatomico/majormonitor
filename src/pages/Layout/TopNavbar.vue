@@ -15,7 +15,7 @@
           <span class="icon-bar"></span>
         </md-button>
 
-        <div class="md-collapse">
+        <!-- <div class="md-collapse">
           <div class="md-autocomplete">
             <md-autocomplete
               class="search"
@@ -31,7 +31,7 @@
               <p class="hidden-lg hidden-md">Dashboard</p>
             </md-list-item>
 
-            <!-- <md-list-item href="#/notifications" class="dropdown">
+            <md-list-item href="#/notifications" class="dropdown">
               <drop-down>
                 <a slot="title" class="dropdown-toggle" data-toggle="dropdown">
                   <i class="material-icons">notifications</i>
@@ -46,7 +46,7 @@
                   <li><a href="#">Another One</a></li>
                 </ul>
               </drop-down>
-            </md-list-item> -->
+            </md-list-item>
 
             <li class="md-list-item">
               <a
@@ -81,7 +81,7 @@
               <p class="hidden-lg hidden-md">Profile</p>
             </md-list-item>
           </md-list>
-        </div>
+        </div> -->
       </div>
     </div>
   </md-toolbar>
