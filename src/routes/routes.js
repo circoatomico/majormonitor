@@ -1,9 +1,9 @@
 import DashboardLayout from "@/pages/Layout/DashboardLayout.vue";
 
-import Dashboard from "@/pages/Dashboard.vue";
+import Monitoramento from "@/pages/Monitoramento.vue";
 import UserProfile from "@/pages/UserProfile.vue";
 import TableList from "@/pages/TableList.vue";
-import Typography from "@/pages/Typography.vue";
+import Filas from "@/pages/Filas.vue";
 import Icons from "@/pages/Icons.vue";
 import Maps from "@/pages/Maps.vue";
 import Notifications from "@/pages/Notifications.vue";
@@ -18,7 +18,7 @@ const routes = [
       {
         path: "monitoramento",
         name: "Monitoramento",
-        component: Dashboard
+        component: Monitoramento
       },
       {
         path: "user",
@@ -33,7 +33,7 @@ const routes = [
       {
         path: "Filas",
         name: "Filas",
-        component: Typography
+        component: Filas
       },
       {
         path: "icons",

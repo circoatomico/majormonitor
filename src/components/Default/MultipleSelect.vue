@@ -53,7 +53,7 @@
         </md-list> 
     </div>  
 
-    <div class="md-layout-item md-size-70  md-alignment-center">
+    <div class="md-layout-item md-size-30  md-alignment-center">
         <center>
             <span class="h3" style="vertical-align: center !important; display: inline-block;">Dados em tempo real</span> 
             <md-progress-spinner :md-diameter="30" :md-stroke="3" md-mode="indeterminate"></md-progress-spinner>

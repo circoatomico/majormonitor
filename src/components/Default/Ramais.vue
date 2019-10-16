@@ -1,10 +1,6 @@
 <template>
-    <div>
-
-        <div class="content margin-block"> 
-            <multiple-select></multiple-select> 
-        </div>
-
+    <div> 
+      
         <div class="content margin-block">
             <div id="box-ramais">
             <div class="md-layout" > 

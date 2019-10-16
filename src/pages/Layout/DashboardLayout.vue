@@ -1,4 +1,5 @@
 <template>
+
   <div class="wrapper" :class="{ 'nav-open': $sidebar.showSidebar }">
     <notifications></notifications>
 
@@ -11,6 +12,10 @@
       <sidebar-link to="/filas">
         <md-icon>reorder</md-icon>
         <p>Filas</p>
+      </sidebar-link>
+       <sidebar-link to="/dashfilas">
+        <md-icon>reorder</md-icon>
+        <p>Dash Filas</p>
       </sidebar-link>
       <sidebar-link to="/table">
         <md-icon>phone</md-icon>
