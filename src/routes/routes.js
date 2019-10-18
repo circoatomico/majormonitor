@@ -1,6 +1,7 @@
 import DashboardLayout from "@/pages/Layout/DashboardLayout.vue";
 
 import Monitoramento from "@/pages/Monitoramento.vue";
+import DetalhamentoFila from "@/pages/DetalhamentoFila.vue";
 import UserProfile from "@/pages/UserProfile.vue";
 import TableList from "@/pages/TableList.vue";
 import Filas from "@/pages/Filas.vue";
@@ -19,6 +20,11 @@ const routes = [
         path: "monitoramento",
         name: "Monitoramento",
         component: Monitoramento
+      },
+      { 
+        path: "filas/detalhamento",
+        name: "Detalhamento de Fila",
+        component: DetalhamentoFila
       },
       {
         path: "user",

@@ -129,7 +129,7 @@
                         :rows="tableRows1"
                         locale="br"
                         
-                        >
+                        > 
                             <th class="sorting" slot="thead-tr">
                                 Ações
                             </th>
@@ -137,7 +137,9 @@
                                 <!-- <td class=""> -->
                                     <div style="border-bottom: solid 1px #DDDDDD;" > 
                                         <center>
+                                          <router-link to="filas/detalhamento" >
                                             <md-button class="md-primary md-just-icon"><md-icon >search</md-icon></md-button>
+                                          </router-link>
                                             <md-button class="md-primary md-just-icon"><md-icon >edit</md-icon></md-button>
                                             <md-button class="md-danger md-just-icon"><md-icon >delete</md-icon></md-button>
                                         </center>
