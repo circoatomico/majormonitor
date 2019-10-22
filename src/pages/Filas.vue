@@ -1,65 +1,6 @@
 <template>
-<div class="content">
-
-    <div class="md-layout">
-       
-    </div>
-
-
-    <!-- <div class="md-layout">
-       <div
-        class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50"
-      >
-        <chart-card
-          :chart-data="emailsSubscriptionChart.data"
-          :chart-options="emailsSubscriptionChart.options"
-          :chart-responsive-options="emailsSubscriptionChart.responsiveOptions"
-          :chart-type="'Bar'"
-          data-background-color="green"
-        >
-          <template slot="content">
-            <div class="row"> 
-            <h4 class="title">Ligações por fila  
-            </h4>
-            </div>
- 
-          </template> 
-          <template slot="footer">
-            <div class="stats">
-              <md-icon>access_time</md-icon>
-              Atualizado em tempo real
-            </div>
-          </template>
-        </chart-card>
-      </div>
-      
-      <div
-        class="md-layout-item md-medium-size-100 md-xsmall-size-100 md-size-50"
-      >
-        <chart-card
-          :chart-data="dataCompletedTasksChart.data"
-          :chart-options="dataCompletedTasksChart.options"
-          :chart-type="'Line'"
-          data-background-color="green"
-        >
-          <template slot="content">
-            <h4 class="title">Monitoria de ligações</h4>
-             
-          </template>
-
-          <template slot="footer">
-            <div class="stats">
-              <md-icon>access_time</md-icon>
-              Atualizado em tempo real
-            </div>
-          </template>
-        </chart-card>
-      </div> 
-    </div> -->
- 
-  <modal name=" ">
-  </modal>
-
+<div class="content"> 
+  
      <div class="row">
         <div> 
           <div class="md-layout-item md-medium-size-200 md-xsmall-size-100 md-size-100">
@@ -130,6 +71,12 @@
                         locale="br"
                         
                         > 
+                            <!-- <th class="sorting" slot="thead-tr">
+                              Dash
+                            </th> -->
+
+ 
+
                             <th class="sorting" slot="thead-tr">
                                 Ações
                             </th>
@@ -137,6 +84,9 @@
                                 <!-- <td class=""> -->
                                     <div style="border-bottom: solid 1px #DDDDDD;" > 
                                         <center>
+                                          <router-link to="filas/dash" >
+                                            <md-button class="md-success md-just-icon"><md-icon >dashboard</md-icon></md-button>
+                                          </router-link>
                                           <router-link to="filas/detalhamento" >
                                             <md-button class="md-primary md-just-icon"><md-icon >search</md-icon></md-button>
                                           </router-link>
@@ -146,6 +96,8 @@
                                     </div>
                                 <!-- </td> -->
                             </template>
+                            
+
                     </datatable>
                    
               </md-card-content>
@@ -186,7 +138,7 @@ export default {
   },data(){
     return{
         filas: [         
-            {id: 1, nome : 'Fila Desenvolvimento', estrategia: 'Atendimento Automático', agentes_online:  '<i class="material-icons">group</i> 3 ativos', agentes_offline:  '<span class="valign"><i class="material-icons">group</i> 1 deslogado(s)</span> ', status: 'Ativa', ações: '<i :click="exibeModal" class="material-icons">zoom_in</i><i class="material-icons">edit</i><i class="material-icons">delete_forever</i>' },
+            {id: 1, nome : 'Fila Desenvolvimento', estrategia: 'Atendimento Automático', agentes_online:  '<i class="material-icons">group</i> 3 ativos', agentes_offline:  '<span class="valign"><i class="material-icons">group</i> 1 deslogado(s)</span> ', status: 'Ativa', dash: '<i :click="exibeModal" class="material-icons">zoom_in</i><i class="material-icons">edit</i><i class="material-icons">delete_forever</i>' },
             {id: 2, nome : 'Fila Comercial', estrategia: 'Atendimento Automático', agentes_online:  '<i class="material-icons">group</i> 3 ativos', agentes_offline:  '<i class="material-icons">group</i> 1 deslogado(s) ', status: 'Pausada', ações: '<i class="material-icons">zoom_in</i><i class="material-icons">edit</i><i class="material-icons">delete_forever</i>' },
             {id: 3, nome : 'Fila Recepção', estrategia: 'Fila de Prioridade', agentes_online:  '<i class="material-icons">group</i> 3 ativos', agentes_offline:  '<i class="material-icons">group</i> 1 deslogado(s) ', status:  'Ativa', ações: '<i class="material-icons">zoom_in</i><i class="material-icons">edit</i><i class="material-icons">delete_forever</i>' },
             {id: 4, nome : 'Fila Diretoria', estrategia: 'Atendimento Automático', agentes_online:  '<i class="material-icons">group</i> 3 ativos', agentes_offline:  '<i class="material-icons">group</i> 1 deslogado(s) ', status:  'Inativa', ações: '<i class="material-icons">zoom_in</i><i class="material-icons">edit</i><i class="material-icons">delete_forever</i>' },
@@ -269,59 +221,58 @@ export default {
         numeric: false,
         html: false
       },
-      {
-        label: "On/Off",
-        field: "on",
-        numeric: false,
-        html: true
-      },
       {   
         label: "Status",
         field: "status",
         numeric: false,
         html: false
-      },
-    //   {
-    //     label: "Ações",
-    //     field: "acoes",
-    //     numeric: false,
-    //     html: false
-    //   }
+      },  
+      {
+        label: "Dash",
+        field: "dash",
+        numeric: false,
+        html: true
+      }
     ],
     tableRows1: [
        {
           id: 1,
           nome: "Fila Desenvolvimento",
           ramais: "13 Ramais",
-          on: '<span style="color: green; font-size: 15px; font-weight: bold;">5</span> / <span style="color: red; font-size: 15px; font-weight: bold;">1</span>',
+          dash: "<div class='md-primary md-just-icon'>teste</div>",
+          acao: "<div class='md-primary md-just-icon'>teste</div>",
           status: "Online" 
         },
         {
           id: 2,
           nome: "Fila Suporte",
           ramais: "5 Ramais",
-          on: '<span style="color: green; font-size: 15px; font-weight: bold;">13</span> / <span style="color: red; font-size: 15px; font-weight: bold;">2</span>',
+          dash: '<span style="color: green; font-size: 15px; font-weight: bold;">13</span> / <span style="color: red; font-size: 15px; font-weight: bold;">2</span>',
+          dash: '<span style="color: green; font-size: 15px; font-weight: bold;">13</span> / <span style="color: red; font-size: 15px; font-weight: bold;">2</span>',
           status: "Online" 
         },
         {
           id: 3,
           nome: "Fila Diretoria",
           ramais: "13 Ramais",
-          on: '<span style="color: green; font-size: 15px; font-weight: bold;">6</span> / <span style="color: red; font-size: 15px; font-weight: bold;">0</span>',
+          dash: '<span style="color: green; font-size: 15px; font-weight: bold;">6</span> / <span style="color: red; font-size: 15px; font-weight: bold;">0</span>',
+          dash: '<span style="color: green; font-size: 15px; font-weight: bold;">6</span> / <span style="color: red; font-size: 15px; font-weight: bold;">0</span>',
           status: "Online" 
         },
         {
           id: 4,
           nome: "Fila Atendimento",
           ramais: "13 Ramais",
-          on: '<span style="color: green; font-size: 15px; font-weight: bold;">7</span> / <span style="color: red; font-size: 15px; font-weight: bold;">9</span>',
+          dash: '<span style="color: green; font-size: 15px; font-weight: bold;">7</span> / <span style="color: red; font-size: 15px; font-weight: bold;">9</span>',
+          dash: '<span style="color: green; font-size: 15px; font-weight: bold;">7</span> / <span style="color: red; font-size: 15px; font-weight: bold;">9</span>',
           status: "Online" 
         },
         {
           id: 5,
           nome: "Fila comercial",
           ramais: "13 Ramais",
-          on: '<span style="color: green; font-size: 15px; font-weight: bold;">8</span> / <span style="color: red; font-size: 15px; font-weight: bold;">4</span>',
+          dash: '<span style="color: green; font-size: 15px; font-weight: bold;">8</span> / <span style="color: red; font-size: 15px; font-weight: bold;">4</span>',
+          dash: '<span style="color: green; font-size: 15px; font-weight: bold;">8</span> / <span style="color: red; font-size: 15px; font-weight: bold;">4</span>',
           status: "Online" 
         },
      

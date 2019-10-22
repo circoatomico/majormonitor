@@ -10,13 +10,9 @@
         <p>Monitoramento</p>
       </sidebar-link>
       <sidebar-link to="/filas">
-        <md-icon>reorder</md-icon>
+        <md-icon>settings_phone</md-icon>
         <p>Filas</p>
-      </sidebar-link>
-       <sidebar-link to="/dashfilas">
-        <md-icon>reorder</md-icon>
-        <p>Dash Filas</p>
-      </sidebar-link>
+      </sidebar-link> 
       <sidebar-link to="/table">
         <md-icon>phone</md-icon>
         <p>Ramais</p>

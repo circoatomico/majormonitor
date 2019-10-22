@@ -2,6 +2,7 @@ import DashboardLayout from "@/pages/Layout/DashboardLayout.vue";
 
 import Monitoramento from "@/pages/Monitoramento.vue";
 import DetalhamentoFila from "@/pages/DetalhamentoFila.vue";
+import DashFilas from "@/pages/filas/DashFilas.vue";
 import UserProfile from "@/pages/UserProfile.vue";
 import TableList from "@/pages/TableList.vue";
 import Filas from "@/pages/Filas.vue";
@@ -25,6 +26,11 @@ const routes = [
         path: "filas/detalhamento",
         name: "Detalhamento de Fila",
         component: DetalhamentoFila
+      },
+      {
+        path: "filas/dash",
+        name: "Dashboard de filas",
+        component: DashFilas
       },
       {
         path: "user",
