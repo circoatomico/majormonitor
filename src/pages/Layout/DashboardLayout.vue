@@ -13,6 +13,12 @@
         <md-icon>settings_phone</md-icon>
         <p>Filas</p>
       </sidebar-link> 
+
+      <sidebar-link to="/sms">
+        <md-icon>textsms</md-icon>
+        <p>SMS</p>
+      </sidebar-link> 
+
       <sidebar-link to="/table">
         <md-icon>phone</md-icon>
         <p>Ramais</p>

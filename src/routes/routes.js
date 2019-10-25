@@ -1,5 +1,8 @@
 import DashboardLayout from "@/pages/Layout/DashboardLayout.vue";
 
+import Sms from "@/pages/sms/Sms.vue";
+import VisualizarSms from "@/pages/sms/Visualizar.vue";
+
 import Monitoramento from "@/pages/Monitoramento.vue";
 import DetalhamentoFila from "@/pages/DetalhamentoFila.vue";
 import DashFilas from "@/pages/filas/DashFilas.vue";
@@ -31,6 +34,16 @@ const routes = [
         path: "filas/dash",
         name: "Dashboard de filas",
         component: DashFilas
+      },
+      {
+        path: "sms",
+        name: "Envio de SMS",
+        component: Sms
+      },
+      {
+        path: "sms/visualizar",
+        name: "Visualização de SMS",
+        component: VisualizarSms
       },
       {
         path: "user",
