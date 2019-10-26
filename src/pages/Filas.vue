@@ -70,13 +70,7 @@
                         :rows="tableRows1"
                         locale="br"
                         
-                        > 
-                            <!-- <th class="sorting" slot="thead-tr">
-                              Dash
-                            </th> -->
-
- 
-
+                        >  
                             <th class="sorting" slot="thead-tr">
                                 Ações
                             </th>

@@ -49,21 +49,14 @@
                                 </md-list-item>
                     
                             </md-list> 
-                    </div>
-                     <!-- <ordered-table v-bind:dados="filas" table-header-color="orange"></ordered-table> -->
+                    </div> 
                      <datatable
                         :columns="tableColumns1"
                         :rows="tableRows1"
                         locale="br"
                         v-bind:key="key_dtb_sms"
                         
-                        > 
-                            <!-- <th class="sorting" slot="thead-tr">
-                              Dash
-                            </th> -->
-
- 
-
+                        >  
                             <th class="sorting" slot="thead-tr">
                                 Ações
                             </th>

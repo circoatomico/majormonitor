@@ -19,6 +19,11 @@
         <p>SMS</p>
       </sidebar-link> 
 
+      <sidebar-link to="/sms/resultados">
+        <md-icon>textsms</md-icon>
+        <p>Resultados SMS</p>
+      </sidebar-link> 
+
       <sidebar-link to="/table">
         <md-icon>phone</md-icon>
         <p>Ramais</p>

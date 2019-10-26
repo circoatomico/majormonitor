@@ -2,7 +2,7 @@ import DashboardLayout from "@/pages/Layout/DashboardLayout.vue";
 
 import Sms from "@/pages/sms/Sms.vue";
 import VisualizarSms from "@/pages/sms/Visualizar.vue";
-
+import ResultadosSMS from "@/pages/sms/Resultados.vue"; 
 import Monitoramento from "@/pages/Monitoramento.vue";
 import DetalhamentoFila from "@/pages/DetalhamentoFila.vue";
 import DashFilas from "@/pages/filas/DashFilas.vue";
@@ -44,6 +44,11 @@ const routes = [
         path: "sms/visualizar",
         name: "Visualização de SMS",
         component: VisualizarSms
+      },
+      {
+        path: "sms/resultados",
+        name: "Resultado de disparo SMS",
+        component: ResultadosSMS
       },
       {
         path: "user",
