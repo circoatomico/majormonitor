@@ -2,7 +2,7 @@
  <div class="content">
   
     <div class="md-layout">
-        <div class="md-layout-item md-size-30">
+        <div class="md-layout-item md-size-60">
 
             <md-list class=" md-card"  >
                 <md-list-item md-expand  >
@@ -37,14 +37,14 @@
 
                     <div class="md-layout-item md-size-100">                   
                         <md-field>
-                        <label for="movies">Status</label>
-                        <md-select  name="filas" id="filas" md-dense multiple>
-                            <md-option value="godfather">Ativo</md-option>
-                            <md-option value="fight-club">Inativo</md-option>
-                            <md-option value="godfather-ii">Aguardando</md-option>
-                            <md-option value="godfather-iii">Discando</md-option>                                
-                            <md-option value="godfather-iii">Outros</md-option>                                
-                        </md-select>
+                            <label for="movies">Status</label>
+                            <md-select  name="filas" id="filas" md-dense multiple>
+                                <md-option value="godfather">Ativo</md-option>
+                                <md-option value="fight-club">Inativo</md-option>
+                                <md-option value="godfather-ii">Aguardando</md-option>
+                                <md-option value="godfather-iii">Discando</md-option>                                
+                                <md-option value="godfather-iii">Outros</md-option>                                
+                            </md-select>
                         </md-field>
                     </div>   
 
@@ -54,11 +54,21 @@
             </md-list> 
         </div>  
 
-         <div class="md-layout-item md-size-30  md-alignment-center">
+        <!-- <div class="md-layout-item md-size-30  md-alignment-center">
             <center>
-                <span class="h3" style="vertical-align: center !important; display: inline-block;">Dados em tempo real</span> 
+                <span class="h3" style="vertical-align: center !important; display: inline-block;">Tempo Real</span> 
                 <md-progress-spinner :md-diameter="30" :md-stroke="3" md-mode="indeterminate"></md-progress-spinner>
             </center>
+        </div>  -->
+
+        <div class="md-layout-item md-size-30  md-alignment-center"> 
+            <center> 
+                <md-icon style="font-size: 60px !important;">access_time</md-icon> <br> <br>
+                <span class="h2">
+                  Segunda, 23 Novembro 
+                </span><br>
+                <span class="h2">{{ horaAtual }}</span>
+            </center>  
         </div> 
 
     </div>
@@ -76,6 +86,71 @@
         <md-card-content>
 
             <div class="md-layout-item md-medium-size-200 md-xsmall-size-100 md-size-100">
+
+              <md-list class=" md-card"  >
+                <md-list-item md-expand  >
+                <md-icon>filter_list</md-icon>
+                <span class="row md-list-item-text">Filtros</span>
+
+                <md-list slot="md-expand"> 
+                  <div class="md-layout"> 
+                    <div class="md-layout-item md-size-25">          
+                        <md-field >
+                            <label>De</label>
+                            <md-input></md-input>
+                        </md-field> 
+                    </div>  
+
+                    <div class="md-layout-item md-size-25">                   
+                        <md-field >
+                            <label>Para</label>
+                            <md-input></md-input>
+                        </md-field>
+                    </div>
+
+                    <div class="md-layout-item md-size-25">                   
+                        <md-field>
+                            <label for="movies">Status</label>
+                            <md-select  name="filas" id="filas" md-dense multiple>
+                                <md-option value="godfather">Ativo</md-option>
+                                <md-option value="fight-club">Inativo</md-option>
+                                <md-option value="godfather-ii">Aguardando</md-option>
+                                <md-option value="godfather-iii">Discando</md-option>                                
+                                <md-option value="godfather-iii">Outros</md-option>                                
+                            </md-select>
+                        </md-field>
+                    </div>   
+                  </div>
+
+                  <div class="md-layout">
+                    <div  class="md-layout-item md-size-25"> 
+                        <!-- <vue-timepicker></vue-timepicker> -->
+
+                        <md-field >
+                            <label>Duração Mínima</label>
+                            <md-input value="01:00"></md-input>
+                        </md-field> 
+                    </div>
+
+                    <div  class="md-layout-item md-size-25"> 
+                       
+                        <md-field >
+                            <label>Duração Máxima</label>
+                            <md-input value="05:00"></md-input>
+                        </md-field> 
+                    </div>
+
+                  </div> 
+
+                  <div class="md-layout-item md-size-100">    
+                        <md-button class="md-success"><md-icon>search</md-icon> Pesquisar</md-button>
+                        <md-button class="md-warning"><md-icon>clear_all</md-icon>Limpar</md-button>
+                    </div> 
+                </md-list>
+                </md-list-item>
+    
+            </md-list> 
+
                 <datatable
                     :columns="tableColumns1"
                     :rows="tableRows1"
@@ -99,13 +174,14 @@ import {
 
 } from "@/components";
 
-import DataTable from "vue-materialize-datatable";
-
+import DataTable from "vue-materialize-datatable"
+// import VueTimepicker from 'vue2-timepicker/src' 
 import Ramais from "@/components/Default/Ramais.vue"
 import RegistroLigacoes from "@/components/Default/RegistroLigacoes.vue"
 
 export default {
   components: {
+    // VueTimepicker,
     StatsCard,
     ChartCard,
     NavTabsCard,
@@ -118,6 +194,7 @@ export default {
   },
   data() {
     return {
+       horaAtual: '',
       users: [
         {
           id: 1,
@@ -309,7 +386,27 @@ export default {
       } 
     ],
     }
-  }
+   
+  },
+    methods: {
+        dataAtual(){
+ 
+            let teste = ''
+            setInterval(function(){  this.horaAtual = ((new Date).toLocaleString().substr(11, 8)) }, 1000);
+
+
+            // setInterval(function () {
+            //    ;  
+            // }, 1000);
+                
+        }
+    },
+    mounted(){
+      // this.dataAtual()
+         setInterval(() => {
+           this.horaAtual = ((new Date).toLocaleString().substr(11, 8))
+        }, 1000)
+    }
 };
 </script>
 

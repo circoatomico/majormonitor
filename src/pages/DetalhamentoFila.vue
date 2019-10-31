@@ -45,7 +45,7 @@
                         </div>
                     </div>
 
-                    <div class="row">
+                     <div class="row">
                         <div class="md-layout">
                             
                             <div  class="md-layout-item md-size-33">
@@ -83,6 +83,44 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="row">
+                        <h3 class="ml-15">Horário de Atendimento</h3>
+                        <div class="md-layout">
+
+                            <div  class="md-layout-item md-size-25"> 
+                                <md-field >
+                                    <label>Horário Inicial</label>
+                                    <md-input value="08:00"></md-input>
+                                </md-field>
+                            </div>
+
+                            <div  class="md-layout-item md-size-25"> 
+                                <md-field >
+                                    <label>Horário Final</label>
+                                    <md-input value="17:00"></md-input>
+                                </md-field>
+                            </div>
+
+                        </div>
+
+                        <div class="md-layout">
+                            <h5 class="ml-15">Dias da semana</h5><br>
+
+                            <div  class="md-layout-item md-size-100"> 
+                                <md-switch v-model="semana.segunda" >Segunda</md-switch>
+                                <md-switch v-model="semana.terca">Terça</md-switch>
+                                <md-switch v-model="semana.quarta">Quarta</md-switch>
+                                <md-switch v-model="semana.quinta">Quinta</md-switch>
+                                <md-switch v-model="semana.sexta">Sexta</md-switch>
+                                <md-switch v-model="semana.sabado">Sábado</md-switch>
+                                <md-switch v-model="semana.domingo">Domingo</md-switch>
+                            </div> 
+                        </div>
+                    </div>
+
+
+                   
                     </md-card> 
 
                       <!-- <md-card> -->
@@ -241,6 +279,15 @@ export default {
     props: [],
     data(){
         return{
+            semana: {
+                segunda: null,
+                terca: null,
+                quarta: null,
+                quinta: null,
+                sexta: null,
+                sabado: null,
+                domingo: null, 
+            },
             fila: {
                 nome: 'Fila Desenvolvimento',
                 categoria: 'Desenvolvimento',

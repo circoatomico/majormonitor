@@ -39,6 +39,17 @@ import MaterialDashboard from "./material-dashboard";
 
 import Chartist from "chartist";
 
+
+// import moment from 'moment'
+
+
+// Main JS (in UMD format)
+import VueTimepicker from 'vue2-timepicker'
+
+// CSS
+import 'vue2-timepicker/dist/VueTimepicker.css'
+
+
 // configure router
 const router = new VueRouter({
   routes, // short for routes: routes
@@ -47,6 +58,10 @@ const router = new VueRouter({
 
 Vue.prototype.$Chartist = Chartist;
 
+// Vue.use(moment)
+
+
+Vue.use(VueTimepicker);
 Vue.use(VueRouter);
 Vue.use(VModal);
 // Vue.use(Vue);

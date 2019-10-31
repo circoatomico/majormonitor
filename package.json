@@ -12,6 +12,7 @@
     "@riophae/vue-treeselect": "^0.3.0",
     "chartist": "0.11.2",
     "google-maps": "3.3.0",
+    "moment": "^2.24.0",
     "vue": "^2.6.10",
     "vue-clickaway": "2.2.2",
     "vue-github-buttons": "3.1.0",
@@ -21,7 +22,8 @@
     "vue-material-datepicker": "^2.0.1",
     "vue-materialize-datatable": "^0.7.7",
     "vue-router": "3.0.6",
-    "vue-social-sharing": "2.4.5"
+    "vue-social-sharing": "2.4.5",
+    "vue2-timepicker": "^1.0.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "3.8.0",
