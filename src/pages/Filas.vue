@@ -11,7 +11,7 @@
                 </md-card-header>
               <md-card-content>
                     <div class="md-layout-item md-size-100">
-                            <md-list class=" md-card"  >
+                            <md-list class=" md-card">
                                 <md-list-item md-expand  >
                                 <md-icon>filter_list</md-icon>
                                 <span class="row md-list-item-text">Filtros</span>
@@ -68,14 +68,12 @@
                      <datatable
                         :columns="tableColumns1"
                         :rows="tableRows1"
-                        locale="br"
-                        
+                        locale="br" 
                         >  
                             <th class="sorting" slot="thead-tr">
                                 Ações
                             </th>
-                            <template slot="tbody-tr" scope="props" style="">
-                                <!-- <td class=""> -->
+                            <template slot="tbody-tr" scope="props" style=""> 
                                     <div style="border-bottom: solid 1px #DDDDDD;" > 
                                         <center>
                                           <router-link to="filas/dash" >
@@ -84,8 +82,123 @@
                                           <router-link to="filas/detalhamento" >
                                             <md-button class="md-primary md-just-icon"><md-icon >search</md-icon></md-button>
                                           </router-link>
-                                            <md-button class="md-primary md-just-icon"><md-icon >edit</md-icon></md-button>
-                                            <md-button class="md-danger md-just-icon"><md-icon >delete</md-icon></md-button>
+                                            <!-- <md-button class="md-primary md-just-icon"><md-icon >edit</md-icon></md-button>
+                                            <md-button class="md-danger md-just-icon"><md-icon >delete</md-icon></md-button> -->
+                                        </center>
+                                    </div> 
+                            </template> 
+                    </datatable>
+
+                    
+                   
+              </md-card-content>
+            </md-card>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div> 
+          <div class="md-layout-item md-medium-size-200 md-xsmall-size-100 md-size-100">
+            <md-card>
+                <md-card-header data-background-color="orange">
+                    <h4 class="title">Status Ramais</h4>
+                    <p class="category"></p>
+                </md-card-header>
+              <md-card-content>
+                    <md-list class=" md-card"  >
+                    <md-list-item md-expand  >
+                        <md-icon>filter_list</md-icon>
+                        <span class="row md-list-item-text">Filtros</span>
+
+                        <md-list style="border-color: transparent !important;" slot="md-expand">
+                            <div class="md-layout">
+                                <div class="md-layout-item md-size-33">                   
+                                    <md-field>
+                                    <label for="movies">Filas</label>
+                                    <md-select  name="filas" id="filas" md-dense multiple>
+                                        <md-option value="fight-club">Desenvolvimento</md-option>
+                                        <md-option value="godfather">Suporte</md-option>
+                                        <md-option value="godfather-ii">Diretoria</md-option>
+                                        <md-option value="godfather-iii">Atendimento</md-option>                                
+                                    </md-select>
+                                    </md-field>
+                                </div>  
+
+                                <div class="md-layout-item md-size-33">                   
+                                    <md-field>
+                                    <label for="movies">Ramais</label>
+                                    <md-select  name="filas" id="filas" md-dense multiple>
+                                        <md-option value="fight-club">8012 - Felipe Jonathan</md-option>
+                                        <md-option value="godfather">8016 - Roberto Silva</md-option>
+                                        <md-option value="godfather-ii">8039 - Amanda Silva</md-option>
+                                        <md-option value="godfather-iii">8000 - Janduy Euclides</md-option>                                
+                                        <md-option value="godfather-iii">8000 - Janduy Euclides</md-option>                                
+                                    </md-select>
+                                    </md-field>
+                                </div>
+
+                                <div class="md-layout-item md-size-33">                   
+                                    <md-field>
+                                    <label for="movies">Status</label>
+                                    <md-select  name="filas" id="filas" md-dense multiple>
+                                        <md-option value="godfather">Disponível</md-option>
+                                        <md-option value="fight-club">Deslogado</md-option>
+                                        <md-option value="godfather-ii">Em Atendimento</md-option>                                
+                                        <md-option value="godfather-ii">Pausado</md-option>                                
+                                    </md-select>
+                                    </md-field>
+                                </div>  
+
+                                <div  class="md-layout-item md-size-25"> 
+                                    <md-datepicker  >
+                                        <label>Período Início</label>
+                                    </md-datepicker> 
+                                </div>
+
+                                <div  class="md-layout-item md-size-25"> 
+                                    <md-datepicker  >
+                                        <label>Período Fim</label>
+                                    </md-datepicker> 
+                                </div>
+
+                                <div  class="md-layout-item md-size-25">  
+                                    <md-field >
+                                        <label>Duração Mínima</label>
+                                        <md-input value="01:00"></md-input>
+                                    </md-field>
+                                </div>
+
+                                <div  class="md-layout-item md-size-25">  
+                                    <md-field >
+                                        <label>Duração Máxima</label>
+                                        <md-input value="05:00"></md-input>
+                                    </md-field> 
+                                </div>
+  
+                                <div class="md-layout-item md-size-100">    
+                                    <md-button class="md-success"><md-icon>search</md-icon> Pesquisar</md-button>
+                                    <md-button class="md-warning"><md-icon>clear_all</md-icon>Limpar</md-button>
+                                </div> 
+                            </div>
+
+                        </md-list>
+                    </md-list-item>
+                    </md-list>
+                   <datatable
+                        :columns="tableColumns2"
+                        :rows="tableRows2"
+                        locale="br" 
+                        >  
+                            <th class="sorting" slot="thead-tr">
+                                Ações
+                            </th>
+                            <template slot="tbody-tr" scope="props" style="">
+                                <!-- <td class=""> -->
+                                    <div style="border-bottom: solid 1px #DDDDDD;" > 
+                                        <center> 
+                                            <md-button class="md-warning md-just-icon"><i class="material-icons">exit_to_app</i></md-button>
+                                            <md-tooltip md-direction="up">Deslogar da Fila</md-tooltip> 
                                         </center>
                                     </div>
                                 <!-- </td> -->
@@ -93,7 +206,6 @@
                             
 
                     </datatable>
-                   
               </md-card-content>
             </md-card>
           </div>
@@ -198,8 +310,8 @@ export default {
       },
     tableColumns1: [
       {
-        label: "Id",
-        field: "id",
+        label: "Fila",
+        field: "fila",
         numeric: true,
         html: false
       },
@@ -210,64 +322,217 @@ export default {
         html: false
       },
       {
-        label: "Ramais Cadastrados",
-        field: "ramais",
-        numeric: false,
+        label: "Agentes",
+        field: "agentes",
+        numeric: true,
         html: false
       },
       {   
-        label: "Status",
-        field: "status",
-        numeric: false,
-        html: false
+        label: "Logados",
+        field: "logados",
+        numeric: true,
+        html: true
       },  
       {
-        label: "Dash",
-        field: "dash",
+        label: "Ocupados",
+        field: "ocupados",
+        numeric: true,
+        html: true
+      },
+      {
+        label: "Pausados",
+        field: "pausados",
+        numeric: true,
+        html: true
+      },
+      {
+        label: "Total Atendidas",
+        field: "atendidas",
+        numeric: false,
+        html: true
+      },
+      {
+        label: "Não Atendidas",
+        field: "recusadas",
+        numeric: false,
+        html: true
+      },
+      {
+        label: "Abandonadas",
+        field: "abandonadas",
+        numeric: false,
+        html: true
+      },
+      {
+        label: "Espera Média",
+        field: "media",
+        numeric: false,
+        html: true
+      },
+      {
+        label: "Duração Média",
+        field: "duracao",
         numeric: false,
         html: true
       }
     ],
     tableRows1: [
        {
-          id: 1,
+          fila: 7011,
           nome: "Fila Desenvolvimento",
-          ramais: "13 Ramais",
-          dash: "<div class='md-primary md-just-icon'>teste</div>",
-          acao: "<div class='md-primary md-just-icon'>teste</div>",
-          status: "Online" 
+          agentes: "13 Ramais",
+          logados: "<md-icon>add</md-icon> 10",
+          ocupados: "2",
+          pausados: "2" ,
+          atendidas: "12 (90%)" ,
+          recusadas: "0 (0%)" ,
+          abandonadas: "0 (0%)" ,
+          media: "15 seg" ,
+          duracao: "04:25 " ,
         },
         {
-          id: 2,
+          fila: 7012,
           nome: "Fila Suporte",
-          ramais: "5 Ramais",
-          dash: '<span style="color: green; font-size: 15px; font-weight: bold;">13</span> / <span style="color: red; font-size: 15px; font-weight: bold;">2</span>',
-          dash: '<span style="color: green; font-size: 15px; font-weight: bold;">13</span> / <span style="color: red; font-size: 15px; font-weight: bold;">2</span>',
-          status: "Online" 
+          agentes: "5 Ramais",
+          logados: "10",
+          ocupados: "2",
+          pausados: "2" ,
+          atendidas: "12 (90%)" ,
+          recusadas: "0 (0%)" ,
+          abandonadas: "0 (0%)" ,
+          media: "15 seg" ,
+          duracao: "04:25 " ,
         },
         {
-          id: 3,
-          nome: "Fila Diretoria",
-          ramais: "13 Ramais",
-          dash: '<span style="color: green; font-size: 15px; font-weight: bold;">6</span> / <span style="color: red; font-size: 15px; font-weight: bold;">0</span>',
-          dash: '<span style="color: green; font-size: 15px; font-weight: bold;">6</span> / <span style="color: red; font-size: 15px; font-weight: bold;">0</span>',
-          status: "Online" 
+          fila: 7013,
+          nome: "Fila Desenvolvimento",
+          agentes: "13 Ramais",
+          logados: "10",
+          ocupados: "2",
+          pausados: "2" ,
+          atendidas: "12 (90%)" ,
+          recusadas: "0 (0%)" ,
+          abandonadas: "0 (0%)" ,
+          media: "15 seg" ,
+          duracao: "04:25 " ,
         },
         {
-          id: 4,
-          nome: "Fila Atendimento",
-          ramais: "13 Ramais",
-          dash: '<span style="color: green; font-size: 15px; font-weight: bold;">7</span> / <span style="color: red; font-size: 15px; font-weight: bold;">9</span>',
-          dash: '<span style="color: green; font-size: 15px; font-weight: bold;">7</span> / <span style="color: red; font-size: 15px; font-weight: bold;">9</span>',
-          status: "Online" 
+         fila: 7014,
+          nome: "Fila Desenvolvimento",
+          agentes: "13 Ramais",
+          logados: "10",
+          ocupados: "2",
+          pausados: "2" ,
+          atendidas: "12 (90%)" ,
+          recusadas: "0 (0%)" ,
+          abandonadas: "0 (0%)" ,
+          media: "15 seg" ,
+          duracao: "04:25 " ,
         },
         {
-          id: 5,
-          nome: "Fila comercial",
-          ramais: "13 Ramais",
-          dash: '<span style="color: green; font-size: 15px; font-weight: bold;">8</span> / <span style="color: red; font-size: 15px; font-weight: bold;">4</span>',
-          dash: '<span style="color: green; font-size: 15px; font-weight: bold;">8</span> / <span style="color: red; font-size: 15px; font-weight: bold;">4</span>',
-          status: "Online" 
+          fila: 7015,
+          nome: "Fila Desenvolvimento",
+          agentes: "13 Ramais",
+          logados: "10",
+          ocupados: "2",
+          pausados: "2" ,
+          atendidas: "12 (90%)" ,
+          recusadas: "0 (0%)" ,
+          abandonadas: "0 (0%)" ,
+          media: "15 seg" ,
+          duracao: "04:25 " ,
+        },
+     
+    ],
+    tableColumns2: [
+      {
+        label: "Fila",
+        field: "fila",
+        numeric: false,
+        html: false
+      },
+      {
+        label: "Agente",
+        field: "agente",
+        numeric: false,
+        html: false
+      },
+      {
+        label: "Status",
+        field: "status",
+        numeric: false,
+        html: false
+      },
+      {   
+        label: "Numero",
+        field: "numero",
+        numeric: false,
+        html: false
+      },  
+      {
+        label: "Penalidade",
+        field: "penalidade",
+        numeric: false,
+        html: false
+      },
+      {
+        label: "Ultima Atendida",
+        field: "ultima",
+        numeric: false,
+        html: false
+      },
+      {
+        label: "Ligações Atendidas",
+        field: "atendidas",
+        numeric: true,
+        html: true
+      }, 
+    ],
+    tableRows2: [
+       {
+          fila: 'Fila Desenvolvimento',
+          agente: "8012 - Felipe Jonathan",
+          status: "Disponível",
+          numero: "aguardando...",
+          penalidade: "0",
+          ultima: "(11) 93015-7808 - 11:23 18/09" ,
+          atendidas: "12"
+        },
+        {
+          fila: 'Fila Suporte',
+          agente: "8016 - Roberto Silva",
+          status: "Deslogado",
+          numero: "aguardando",
+          penalidade: "0",
+          ultima: "(11) 97670-7000 - 11:29 18/09" ,
+          atendidas: "25"
+        },
+        {
+          fila: 'Fila Atendimento',
+          agente: "8039 - Amanda Silva",
+          status: "Em atendimento",
+          numero: "(11) 94512-6987",
+          penalidade: "0",
+          ultima: "(11) 96547-7000 - 10:25 19/09" ,
+          atendidas: "6"
+        },
+        {
+          fila: 'Fila Diretoria',
+          agente: "8000 - Janduy Euclides",
+          status: "Disponível",
+          numero: "(11) 98798-6987",
+          penalidade: "0",
+          ultima: "(11) 98475-7000 - 10:25 19/09" ,
+          atendidas: "4"
+        },
+        {
+          fila: 'Fila Atendimento',
+          agente: "8039 - Amanda Silva",
+          status: "Em atendimento",
+          numero: "(11) 94512-6987",
+          penalidade: "0",
+          ultima: "(11) 96547-7000 - 10:25 19/09" ,
+          atendidas: "6"
         },
      
     ],

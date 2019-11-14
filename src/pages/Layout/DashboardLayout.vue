@@ -4,17 +4,20 @@
     <notifications></notifications>
 
     <side-bar>
+      
       <mobile-menu slot="content"></mobile-menu>
+
       <sidebar-link to="/monitoramento">
         <md-icon>dvr</md-icon>
         <p>Monitoramento</p>
       </sidebar-link>
+
       <sidebar-link to="/filas">
         <md-icon>settings_phone</md-icon>
-        <p>Filas</p>
+        <p>Real Time Filas</p>
       </sidebar-link> 
 
-      <sidebar-link to="/sms">
+      <!-- <sidebar-link to="/sms">
         <md-icon>textsms</md-icon>
         <p>SMS</p>
       </sidebar-link> 
@@ -31,15 +34,15 @@
       <sidebar-link to="/icons">
         <md-icon>bubble_chart</md-icon>
         <p>Notificações</p>
-      </sidebar-link>
+      </sidebar-link> -->
        <sidebar-link to="/user">
         <md-icon>fingerprint</md-icon>
-        <p>Perfil</p>
+        <p>Segurança</p>
       </sidebar-link>
-      <sidebar-link to="/upgrade" class="active-pro">
+      <!-- <sidebar-link to="/upgrade" class="active-pro">
         <md-icon>unarchive</md-icon>
         <p>Adquirir Licença</p>
-      </sidebar-link>
+      </sidebar-link> -->
     </side-bar>
 
     <div class="main-panel">
