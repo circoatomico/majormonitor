@@ -13,6 +13,7 @@
         Owens’ bed design but the back is...
       </p>
       <md-button class="md-round md-success">Follow</md-button>
+      <md-button class="md-round md-success" @click="logout">Logout</md-button>
     </md-card-content>
   </md-card>
 </template>
@@ -27,6 +28,13 @@ export default {
   },
   data() {
     return {};
+  },methods: {
+
+    logout(){
+      localStorage.removeItem('api_token');
+      this.$router.push('logar/login')
+    }
+
   }
 };
 </script>

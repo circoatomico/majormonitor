@@ -74,14 +74,15 @@
                   </drop-down>
                 </div>
               </a>
-            </li>
+            </li> 
 
-            <md-list-item href="#/user">
+              <md-list-item href="#/user">  
+              <md-list-item>
               <i class="material-icons">person</i>
               <p class="hidden-lg hidden-md">Profile</p>
-            </md-list-item>
-          </md-list>
-        </div> -->
+            </md-list-item>  -->
+
+        </div>
       </div>
     </div>
   </md-toolbar>
