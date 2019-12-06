@@ -4,45 +4,28 @@
     <notifications></notifications>
 
     <side-bar>
-      
       <mobile-menu slot="content"></mobile-menu>
 
-      <sidebar-link to="/monitoramento">
+      <sidebar-link v-if="menu.monitoramento" to="/monitoramento">
         <md-icon>dvr</md-icon>
         <p>Monitoramento</p>
       </sidebar-link>
 
-      <sidebar-link to="/filas">
+      <sidebar-link v-if="menu.filas" to="/filas">
         <md-icon>settings_phone</md-icon>
         <p>Real Time Filas</p>
       </sidebar-link> 
-
-      <!-- <sidebar-link to="/sms">
-        <md-icon>textsms</md-icon>
-        <p>SMS</p>
+ 
+       <sidebar-link v-if="menu.seguranca" to="/admin">
+        <md-icon>apps</md-icon>
+        <p>Administração</p>
       </sidebar-link> 
 
-      <sidebar-link to="/sms/resultados">
-        <md-icon>textsms</md-icon>
-        <p>Resultados SMS</p>
+      <sidebar-link to="/user">
+        <md-icon>person</md-icon>
+        <p>Perfil</p>
       </sidebar-link> 
 
-      <sidebar-link to="/table">
-        <md-icon>phone</md-icon>
-        <p>Ramais</p>
-      </sidebar-link> 
-      <sidebar-link to="/icons">
-        <md-icon>bubble_chart</md-icon>
-        <p>Notificações</p>
-      </sidebar-link> -->
-       <sidebar-link to="/user">
-        <md-icon>fingerprint</md-icon>
-        <p>Segurança</p>
-      </sidebar-link>
-      <!-- <sidebar-link to="/upgrade" class="active-pro">
-        <md-icon>unarchive</md-icon>
-        <p>Adquirir Licença</p>
-      </sidebar-link> -->
     </side-bar>
 
     <div class="main-panel">
@@ -66,6 +49,28 @@ export default {
     DashboardContent,
     ContentFooter,
     MobileMenu
+  },
+
+  data(){
+    return{
+      menu: {
+        monitoramento: false, 
+        seguranca: false,
+        filas: false,
+        administracao: false
+      }
+    }
+  },
+  mounted(){
+
+    let menus = JSON.parse(localStorage.getItem('menus'));
+
+    console.log(menus)
+ 
+    this.menu.monitoramento = menus.monitoramento
+    this.menu.seguranca = menus.seguranca
+    this.menu.filas = menus.filas
+    this.menu.administracao = menus.administracao 
   }
 };
 </script>

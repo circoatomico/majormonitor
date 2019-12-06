@@ -6,6 +6,12 @@ import LoginLayout from "@/pages/Layout/LoginLayout.vue";
 import Sms from "@/pages/sms/Sms.vue";
 import Login from "@/pages/login/Login.vue";
 
+// Cliente
+import Cliente from "@/pages/Clientes/Cliente.vue";
+
+// // Perfil
+import Perfil from "@/pages/Perfil/Perfil.vue";
+
 import VisualizarSms from "@/pages/sms/Visualizar.vue";
 import ResultadosSMS from "@/pages/sms/Resultados.vue"; 
 import Monitoramento from "@/pages/Monitoramento.vue";
@@ -82,13 +88,18 @@ const routes = [
       },
       {
         path: "user",
-        name: "User Profile",
-        component: UserProfile
+        name: "Perfil",
+        component: Perfil
       },
       {
         path: "table",
         name: "Table List",
         component: TableList
+      },
+      {
+        path: "cliente/:id",
+        name: "Detalhamento de Cliente",
+        component: Cliente
       },
       {
         path: "Filas",
@@ -121,41 +132,5 @@ const routes = [
     ]
   }
 ];
-
-// function nextFactory(context, middleware, index) {
-//   const subsequentMiddleware = middleware[index];
-//   // If no subsequent Middleware exists,
-//   // the default `next()` callback is returned.
-//   if (!subsequentMiddleware) return context.next;
-
-//   return (...parameters) => {
-//     // Run the default Vue Router `next()` callback first.
-//     context.next(...parameters);
-//     // Then run the subsequent Middleware with a new
-//     // `nextMiddleware()` callback.
-//     const nextMiddleware = nextFactory(context, middleware, index, 1);
-//     subsequentMiddleware({ ...context, next: nextMiddleware });
-//   };
-// }
-
-// routes.path.children.path.beforeEach((to, from, next) => {
-//   if (to.meta.middleware) {
-//     const middleware = Array.isArray(to.meta.middleware)
-//       ? to.meta.middleware
-//       : [to.meta.middleware];
-
-//     const context = {
-//       from,
-//       next,
-//       routes,
-//       to,
-//     };
-//     const nextMiddleware = nextFactory(context, middleware, 1);
-
-//     return middleware[0]({ ...context, next: nextMiddleware });
-//   }
-
-//   return next();
-// });
 
 export default routes;

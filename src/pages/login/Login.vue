@@ -9,7 +9,7 @@
         <div class="md-title">Monitor Calls</div>
         <div class="md-body-1">Desenvolvido para soluções melhores.</div>
       </div>
-      <notifications group="foo"  />
+      <notifications group="foo"  position="bottom right" />
 
       <form>
         <div class="form">
@@ -25,9 +25,16 @@
         </div>
       </form>
 
-        <div class="actions md-layout md-alignment-center-space-between">
-            <a href="/resetpassword">Resetar Senha</a>
-            <md-button class="md-raised md-primary" @click="auth( )">Log in</md-button>
+        <div class="actions md-layout md-alignment-center-space-between"> 
+            <md-button class="md-raised md-success" @click="auth()">Logar</md-button>
+            <md-button class="md-primary md-raised" @click="active = true">Esqueci minha senha</md-button>
+            <span v-if="value">Value: {{ value }}</span>
+                <!-- <md-button class="md-primary md-raised" @click="showDialog = true">Show Dialog</md-button> -->
+                <!-- <md-button class="md-primary md-raised" @click="active = true">Confirm</md-button> -->
+
+            <!-- <md-button class="md-primary md-raised"  
+             @click="active = true"
+             >Esqueci minha senha</md-button> -->
         </div>
 
         <div class="loading-overlay" v-if="loading">
@@ -35,6 +42,19 @@
         </div>
 
     </md-content>
+
+
+    <md-dialog-prompt
+      :md-active.sync="active"
+      v-model="ajuda.email"
+      md-title="Digite seu e-mail?"
+      md-input-maxlength="80"
+      md-input-placeholder="Digite seu email..."
+      md-confirm-text="Enviar"
+      md-cancel-text="Cancelar"
+      :md-confirm="resetPass()"
+      :md-cancel="cancelPass()" />
+
     <div class="background" />
   </div>
 </template>
@@ -45,20 +65,30 @@ export default {
   name: "Login",
   data() {
     return {
-      loading: false,
-      erroLogin: false,
-      imgLogo: {
-        type: String,
-        default: require("@/assets/img/voiplogo.png")
+
+        active: false,
+        value: null,
+
+
+        showDialog: false,
+        loading: false,
+        erroLogin: false,
+        imgLogo: {
+            type: String,
+            default: require("@/assets/img/voiplogo.png")
+            },
+            imgBack: {
+            type: String,
+            default: require("@/assets/img/bg.jpg")
+            },
+        login: {
+            email: "luiz.lgvasconceslos2@gmail.com",
+            password: "123456789"
         },
-        imgBack: {
-        type: String,
-        default: require("@/assets/img/bg.jpg")
-        },
-      login: {
-        email: "luiz.lgvasconceslos2@gmail.com",
-        password: "123456789"
-      }
+
+        ajuda: {
+            email : ''
+        }
     };
   },
   methods: {
@@ -73,18 +103,41 @@ export default {
 
       this.$http.post( this.$apiurl + 'login', this.login).then(response => {
         
-            console.log(response.data.api_token)
+            console.log(response.data)
 
             if (response.data.api_token) { 
-                localStorage.setItem('api_token', JSON.stringify(response.data.api_token))
+                console.log(response)
+                localStorage.setItem('api_token', response.data.api_token)
                 localStorage.setItem('validade', JSON.stringify(response.data.api_token))
+                localStorage.setItem('menus', JSON.stringify(response.data.menu))
                 this.$router.push('/monitoramento')
                 console.log('funfa ai mano')
             } 
 
         }, response => {  
-            this.$notify({ group: 'foo', text: 'Usuário ou senha inválidos', type: 'warning' })
+            this.$notify({ group: 'foo', text: 'Usuário ou senha inválidos', type: 'danger' })
         }); 
+    },
+    resetPass(){
+        console.log('reseting pass')
+        this.showDialog = false
+
+        if(this.ajuda.email !== '' && this.ajuda.email !== undefined){
+            console.log('vamos resetar')
+            this.$notify({ 
+                group: 'foo', 
+                text: '<h4>Se houver uma conta associada a este e-mail você receberá em breve um link para resetar sua senha</h4>.', 
+                type: 'warning',
+                speed: 1000, 
+                width: 300 })
+
+        }
+
+    },
+    cancelPass(){
+        this.showDialog = false
+        this.ajuda.email = ''
+        console.log(this.ajuda.email)
     }
   }, 
     mounted: function(){
